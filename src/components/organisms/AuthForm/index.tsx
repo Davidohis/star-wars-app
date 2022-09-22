@@ -10,6 +10,9 @@ import {
   CustomFormGroup,
   CustomFormWrapper,
   CustomForgotLink,
+  FormFragment,
+  FormTitle,
+  FormParagraph,
 } from "./styles";
 import { pwRegex } from "../../../utils";
 
@@ -32,8 +35,8 @@ export default function AuthForm() {
   return (
     <CustomFormWrapper>
       <CustomFormInner>
-        <Title level={3}>Login</Title>
-        <Paragraph>Kindly enter your details to log in </Paragraph>
+        <FormTitle>Login</FormTitle>
+        <FormParagraph>Kindly enter your details to log in </FormParagraph>
         <CustomFormGroup>
           <Formik
             initialValues={{}}
@@ -45,7 +48,7 @@ export default function AuthForm() {
           >
             {({ handleSubmit }) => {
               return (
-                <React.Fragment>
+                <FormFragment>
                   <Form>
                     <FormItem name={"email"}>
                       <Input
@@ -70,7 +73,7 @@ export default function AuthForm() {
                     handleSubmit={handleSubmit}
                     type={"Login"}
                   />
-                </React.Fragment>
+                </FormFragment>
               );
             }}
           </Formik>

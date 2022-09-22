@@ -13,6 +13,22 @@ export const CustomContainer = styled.div`
   }
 `;
 
+export const FormTitle = styled.h4`
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #434854;
+`;
+
+export const FormParagraph = styled.p`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #737373;
+`;
+
 export const CustomAccount = styled.div`
   display: flex;
   justify-content: center;
@@ -139,7 +155,6 @@ export const CustomFormGroup = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
   margin-bottom: 20px;
 
   @media ${(props) => props.theme.breakpoints.md} {
@@ -151,6 +166,10 @@ export const CustomSwiperContainer = styled.div`
   width: 100%;
   height: auto;
   padding: 30px;
+`;
+
+export const FormFragment = styled.div`
+  margin-top: 3rem;
 `;
 
 export const CustomForgotLink = styled.p`
