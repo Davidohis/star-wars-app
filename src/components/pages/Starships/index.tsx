@@ -50,10 +50,10 @@ export default function StarshipPage() {
     {
       key: "button",
       title: "View",
-      dataIndex: "title",
+      dataIndex: "name",
       width: 70,
-      render: (title) => (
-        <Link to={`/preview/${title}`}>
+      render: (name) => (
+        <Link to={`/preview/${name}`}>
           <MoreOutlined size={15} style={{ cursor: "pointer" }} />
         </Link>
       ),

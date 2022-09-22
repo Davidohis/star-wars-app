@@ -17,7 +17,7 @@ export default function HeaderComponent({ goback }: any) {
     <React.Fragment>
       <HeaderNavbarWrapper goback={goback}>
         {goback ? (
-          <HeaderNavbarItemsLeft onClick={() => navigate("/dashboard")}>
+          <HeaderNavbarItemsLeft onClick={() => navigate(-1)}>
             <LeftOutlined />
             <span>Back</span>
           </HeaderNavbarItemsLeft>
