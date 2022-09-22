@@ -18,7 +18,7 @@ export default function AuthForm() {
   const navigate = useNavigate();
   // script for validation
   const validationSchema = Yup.object().shape({
-    email: Yup.string().email(),
+    email: Yup.string().email().required("This field is required"),
     password: Yup.string()
       .matches(
         pwRegex,
@@ -67,7 +67,7 @@ export default function AuthForm() {
                   {/* Submit Buttton */}
                   <Atom.CustomButton
                     handleSubmit={handleSubmit}
-                    type={"Login"}
+                    type={"Sign In"}
                   />
                 </FormFragment>
               );
