@@ -152,18 +152,6 @@ export const CustomSwiperContainer = styled.div`
   padding: 30px;
 `;
 
-export const CustomLabel = styled.label`
-  text-align: left;
-  font-weight: 600;
-  line-height: 40px;
-  color: #808080;
-  font-size: 15px;
-
-  & span {
-    color: red;
-  }
-`;
-
 export const CustomForgotLink = styled.p`
   display: flex;
   justify-content: center;

@@ -1,14 +1,34 @@
 import styled from "styled-components";
 
-export const HeaderNavbarWrapper = styled.nav`
+interface Props {
+  goback: boolean;
+}
+export const HeaderNavbarWrapper = styled.nav<Props>`
   background: #ffffff;
   grid-area: nav;
   height: 64px;
   padding: 10px 30px 10px 30px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: ${(porps) => (porps.goback ? "space-between" : "flex-end")};
   align-items: center;
   box-shadow: 0px 2px 6px rgba(229, 229, 229, 0.3);
+`;
+
+export const HeaderNavbarItemsLeft = styled.div`
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  & > span {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #a4a7b7;
+    padding-left: 0.8rem;
+  }
 `;
 
 export const HeaderNavbarItemsRight = styled.div`

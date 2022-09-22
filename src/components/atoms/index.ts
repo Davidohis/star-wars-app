@@ -12,3 +12,4 @@ export { default as MenuIcon } from "./icons/MenuIcon";
 export { default as ImageComponent } from "./images";
 export { default as CustomButton } from "./button";
 export { default as TableHeadingComponent } from "./Heading";
+export { default as FormFooter } from "./footer";

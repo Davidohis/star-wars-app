@@ -2,18 +2,33 @@ import React from "react";
 import { Formik } from "formik";
 import { Form, Input, FormItem } from "formik-antd";
 import { Typography } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Atom from "../../atoms";
+import * as Yup from "yup";
 import {
   CustomFormInner,
-  CustomLabel,
   CustomFormGroup,
   CustomFormWrapper,
   CustomForgotLink,
 } from "./styles";
+import { pwRegex } from "../../../utils";
 
 export default function AuthForm() {
+  const navigate = useNavigate();
   const { Title, Paragraph } = Typography;
+
+  // script for validation
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().email(),
+    password: Yup.string()
+      .matches(
+        pwRegex,
+        "Must include uppercase , lowercase letters and a number"
+      )
+      .min(8, "Password must be at least 8 characters")
+      .required("This field is required"),
+  });
+
   return (
     <CustomFormWrapper>
       <CustomFormInner>
@@ -23,25 +38,20 @@ export default function AuthForm() {
           <Formik
             initialValues={{}}
             onSubmit={(values, actions) => {
+              navigate("/dashboard");
               actions.setSubmitting(false);
             }}
-            // validationSchema={validationSchema}
+            validationSchema={validationSchema}
           >
             {({ handleSubmit }) => {
               return (
                 <React.Fragment>
                   <Form>
-                    <CustomLabel>
-                      Email or User Name <span>*</span>
-                    </CustomLabel>
-                    <FormItem name={"userName"}>
-                      <Input name={"userName"} />
+                    <FormItem name={"email"}>
+                      <Input name={"email"} />
                     </FormItem>
                   </Form>
                   <Form>
-                    <CustomLabel>
-                      Password<span>*</span>
-                    </CustomLabel>
                     <FormItem name={"password"}>
                       <Input.Password name={"password"} />
                     </FormItem>
@@ -61,6 +71,8 @@ export default function AuthForm() {
         <CustomForgotLink>
           <Link to="/"> Forgot your password?</Link>
         </CustomForgotLink>
+
+        <Atom.FormFooter />
       </CustomFormInner>
     </CustomFormWrapper>
   );
