@@ -1,7 +1,5 @@
-import React from "react";
 import { Formik } from "formik";
 import { Form, Input, FormItem } from "formik-antd";
-import { Typography } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import * as Atom from "../../atoms";
 import * as Yup from "yup";
@@ -18,8 +16,6 @@ import { pwRegex } from "../../../utils";
 
 export default function AuthForm() {
   const navigate = useNavigate();
-  const { Title, Paragraph } = Typography;
-
   // script for validation
   const validationSchema = Yup.object().shape({
     email: Yup.string().email(),
