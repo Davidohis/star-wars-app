@@ -12,7 +12,6 @@ const TableDetailComponent = ({ data, isFetching, columns }: Props) => {
   const [selectedRowKeys, setSelectedRowKeys] = React.useState<React.Key[]>([]);
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
-    console.log("selectedRowKeys changed: ", selectedRowKeys);
     setSelectedRowKeys(newSelectedRowKeys);
   };
 

@@ -7,10 +7,11 @@ import {
   HeaderProfile,
 } from "./styles";
 
-export default function HeaderComponent() {
+export default function HeaderComponent({back}: any) {
   return (
     <React.Fragment>
       <HeaderNavbarWrapper>
+         <div>backW</div>
         <HeaderNavbarItemsRight>
           <Atom.NotifyIcon />
 

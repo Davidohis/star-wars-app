@@ -3,13 +3,13 @@ import { Layout } from "../../templates";
 import { GlobalContainerWrapper } from "../styles";
 import { useQuery } from "react-query";
 import * as api from "../../../query";
-import columns from "./TableColums";
 
-export default function StarshipPage() {
+
+export default function PreviewPage() {
   // React query function hooks for queryFilms
   const { error, data, isFetching, isLoading } = useQuery(
-    "queryStarships",
-    api.queryStarships
+    "queryFilms",
+    api.queryFilms
   );
   const swapiData = isLoading ? "" : data?.results;
 
@@ -18,13 +18,8 @@ export default function StarshipPage() {
   return (
     <Layout>
       <GlobalContainerWrapper>
-        <Organism.HeaderComponent />
-        <Organism.TableComponent
-          title={"Starships"}
-          data={swapiData}
-          isFetching={isFetching}
-          columns={columns}
-        />
+        <Organism.HeaderComponent back={true} />
+        <Organism.PreviewComponent/>
         <Organism.SiderBarComponent />
       </GlobalContainerWrapper>
     </Layout>

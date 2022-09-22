@@ -28,7 +28,7 @@ const columns: ColumnsType<DashboardTableType> = [
     title: "Character",
     dataIndex: "url",
     width: 250,
-    render: (url) => <p>fvfjfj </p>,
+
   },
 ];
 

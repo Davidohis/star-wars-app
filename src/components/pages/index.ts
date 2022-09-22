@@ -10,3 +10,4 @@ export { default as DashboardPage } from "./Dashboard";
 export { default as PeoplesPage } from "./People";
 export { default as SpeciesPage } from "./Species";
 export { default as StarshipPage } from "./Starships";
+export {default as PreviewPage} from "./Preview"

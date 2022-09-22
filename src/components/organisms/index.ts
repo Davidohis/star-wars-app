@@ -11,3 +11,4 @@ export { default as TableComponent } from "./Table";
 export { default as SiderBarComponent } from "./Sidebar";
 export { default as HeaderComponent } from "./HeaderNavbar";
 export { default as DashboardCardList } from "./Card/dashboardCardList";
+export {default as PreviewComponent} from "./Preview"

@@ -15,7 +15,6 @@ export default function SpeciesPage() {
 
   if (error) return <h2>An error has occurred</h2>;
 
-  console.log(data);
   return (
     <Layout>
       <GlobalContainerWrapper>

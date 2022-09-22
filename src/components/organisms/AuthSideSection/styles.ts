@@ -21,6 +21,11 @@ export const CustomOnboarding = styled.div`
   justify-content: center;
   align-items: center;
 
+  & img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   @media ${(props) => props.theme.breakpoints.md} {
     order: 0;
   }

@@ -28,9 +28,6 @@ const columns: ColumnsType<SpeciesTableType> = [
     title: "Created",
     dataIndex: "created",
     width: 250,
-    render: (created) => (
-      <div>{moment(created).format("MMMM Do YYYY").substring(0, 26)}</div>
-    ),
   },
 ];
 

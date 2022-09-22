@@ -15,7 +15,6 @@ export default function PeoplesPage() {
 
   if (error) return <h2>An error has occurred</h2>;
 
-  console.log("people", data);
 
   return (
     <Layout>

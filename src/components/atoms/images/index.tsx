@@ -9,9 +9,6 @@ interface Props {
 
 export default function ImageComponent({ image, alt, sx, hg }: Props) {
   const CustomImage = styled.img`
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     width: ${(props) => sx};
     height: ${(props) => hg};
   `;

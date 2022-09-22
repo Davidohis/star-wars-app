@@ -12,6 +12,7 @@ export default function App() {
         <Route path="/starships" element={<Pages.StarshipPage />} />
         <Route path="/people" element={<Pages.PeoplesPage />} />
         <Route path="/species" element={<Pages.SpeciesPage />} />
+        <Route path="/preview/:id" element={<Pages.PreviewPage />} />
       </Routes>
     </Theme>
   );

@@ -28,10 +28,6 @@ const columns: ColumnsType<StarshipsTableType> = [
     title: "Character",
     dataIndex: "films",
     width: 250,
-    render: (createdAt) => (
-      import moment from "moment";
-      <div>{moment(createdAt).format("MMMM Do YYYY").substring(0, 26)}</div>
-    ),
   },
 ];
 
