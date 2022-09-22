@@ -139,6 +139,7 @@ export const CustomFormGroup = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-top: 1rem;
   margin-bottom: 20px;
 
   @media ${(props) => props.theme.breakpoints.md} {

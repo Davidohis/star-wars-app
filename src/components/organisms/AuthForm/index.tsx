@@ -48,12 +48,20 @@ export default function AuthForm() {
                 <React.Fragment>
                   <Form>
                     <FormItem name={"email"}>
-                      <Input name={"email"} />
+                      <Input
+                        name={"email"}
+                        placeholder={"email"}
+                        style={{ height: "50px" }}
+                      />
                     </FormItem>
                   </Form>
                   <Form>
                     <FormItem name={"password"}>
-                      <Input.Password name={"password"} />
+                      <Input.Password
+                        name={"password"}
+                        placeholder={"password"}
+                        style={{ height: "50px" }}
+                      />
                     </FormItem>
                   </Form>
 
