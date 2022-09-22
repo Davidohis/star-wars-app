@@ -86,6 +86,10 @@ export const CustomFormInner = styled.div`
   border: 1px solid rgba(164, 167, 183, 0.3);
   border-radius: 8px;
   padding: 5rem;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    padding: 5rem 1.5rem;
+  }
 `;
 export const CustomFormInnerImage = styled.div`
   display: flex;

@@ -8,6 +8,10 @@ export const CardWrapper = styled.div`
   border-radius: 10px;
   padding: 2rem;
   margin: 2rem 0px 3rem 0px;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    margin: 1rem 0px 1rem 0px;
+  }
 `;
 
 export const CardHeader = styled.div`

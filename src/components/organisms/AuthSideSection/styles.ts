@@ -28,5 +28,6 @@ export const CustomOnboarding = styled.div`
   }
   @media ${(props) => props.theme.breakpoints.md} {
     order: 0;
+    display: none;
   }
 `;
