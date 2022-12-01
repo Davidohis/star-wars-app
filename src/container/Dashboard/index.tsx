@@ -1,14 +1,12 @@
 import type { ColumnsType } from "antd/es/table";
 import { MoreOutlined } from "@ant-design/icons";
-import { DashboardTableType } from "../../../utils/types";
-import * as Organism from "../../organisms";
-import { Layout } from "../../templates";
-import { GlobalContainerWrapper } from "../styles";
+import * as Organism from "../../components/organisms";
 import { useQuery } from "react-query";
-import * as api from "../../../query";
+import * as api from "../../query";
 import { Link } from "react-router-dom";
+import { DashboardTableType } from "../../utils/types";
 
-export default function DashboardPage() {
+export default function DashboardModule() {
   // React query function hooks for queryFilms
   const { error, data, isFetching, isLoading } = useQuery(
     "queryFilms",
@@ -62,17 +60,11 @@ export default function DashboardPage() {
   ];
 
   return (
-    <Layout>
-      <GlobalContainerWrapper>
-        <Organism.HeaderComponent />
-        <Organism.TableComponent
-          title={"Films"}
-          data={swapiData}
-          isFetching={isFetching}
-          columns={columns}
-        />
-        <Organism.SiderBarComponent />
-      </GlobalContainerWrapper>
-    </Layout>
+    <Organism.TableComponent
+      title={"Films"}
+      data={swapiData}
+      isFetching={isFetching}
+      columns={columns}
+    />
   );
 }

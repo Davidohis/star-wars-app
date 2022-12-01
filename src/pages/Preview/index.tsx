@@ -1,5 +1,5 @@
-import * as Organism from "../../organisms";
-import { Layout } from "../../templates";
+import * as Organism from "../../components/organisms";
+import { Layout } from "../../components/templates";
 import { GlobalContainerWrapper } from "../styles";
 import { useParams } from "react-router-dom";
 

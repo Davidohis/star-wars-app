@@ -1,5 +1,5 @@
-import { Layout } from "../../templates";
-import * as Organism from "../../organisms";
+import { Layout } from "../../components/templates";
+import * as Organism from "../../components/organisms";
 import { CustomContainer } from "./styles";
 
 export default function LoginPage() {

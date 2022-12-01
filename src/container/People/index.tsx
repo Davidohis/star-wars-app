@@ -1,46 +1,42 @@
-import * as Organism from "../../organisms";
+import * as Organism from "../../components/organisms";
 import moment from "moment";
 import { MoreOutlined } from "@ant-design/icons";
-import { Layout } from "../../templates";
-import { GlobalContainerWrapper } from "../styles";
 import { useQuery } from "react-query";
-import * as api from "../../../query";
+import * as api from "../../query";
 import type { ColumnsType } from "antd/es/table";
-import { SpeciesTableType } from "../../../utils/types";
+import { PeopleTableType } from "../../utils/types";
 import { Link } from "react-router-dom";
 
-export default function SpeciesPage() {
-  // React query function hooks for queryFilms
+export default function PeoplesModule() {
+  // React query function hooks for queryPeople
   const { error, data, isFetching, isLoading } = useQuery(
-    "querySpecies",
-    api.querySpecies
+    "queryPeople",
+    api.queryPeople
   );
   const swapiData = isLoading ? "" : data?.results;
 
   if (error) return <h2>An error has occurred</h2>;
 
-  const columns: ColumnsType<SpeciesTableType> = [
+  const columns: ColumnsType<PeopleTableType> = [
     {
       title: "Name",
       dataIndex: "name",
     },
     {
-      title: "Classification",
-      dataIndex: "classification",
+      title: "Brth Year",
+      dataIndex: "birth_year",
     },
     {
-      title: "Eye colors",
-      dataIndex: "eye_colors",
-      width: 250,
+      title: "Gender",
+      dataIndex: "gender",
     },
     {
       title: "Hair Color",
-      dataIndex: "hair_colors",
-      width: 200,
+      dataIndex: "hair_color",
     },
     {
       title: "Height",
-      dataIndex: "average_height",
+      dataIndex: "height",
     },
     {
       title: "Created",
@@ -62,17 +58,11 @@ export default function SpeciesPage() {
   ];
 
   return (
-    <Layout>
-      <GlobalContainerWrapper>
-        <Organism.HeaderComponent />
-        <Organism.TableComponent
-          title={"Species"}
-          data={swapiData}
-          isFetching={isFetching}
-          columns={columns}
-        />
-        <Organism.SiderBarComponent />
-      </GlobalContainerWrapper>
-    </Layout>
+    <Organism.TableComponent
+      title={"People"}
+      data={swapiData}
+      isFetching={isFetching}
+      columns={columns}
+    />
   );
 }
